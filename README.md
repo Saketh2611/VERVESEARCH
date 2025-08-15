@@ -2,6 +2,10 @@
 
 VerveSearch is a smart search engine built with Streamlit that helps athletes, coaches, and fitness enthusiasts find relevant discussions on Reddit about sports recovery, injuries, fatigue, and performance. It uses semantic search to understand the user's query and finds the most relevant posts, then leverages a generative AI model to provide a concise, expert-like summary.
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Zuh0T8MMkbWhN_tTovgBivyLSjJtle0q?authuser=2#scrollTo=CJGgHHBJtd0x)
+
+*This Colab notebook explains the semantic search component of the project.*
+
 ## ✨ Key Features
 
 * **🧠 Semantic Search**: Understands the *meaning* behind your query (e.g., "my ankle hurts after a run") to find the most relevant content, not just keywords.
@@ -44,6 +48,7 @@ Follow these steps to get the project running on your local machine.
 git clone [https://github.com/your-username/VerveSearch.git](https://github.com/your-username/VerveSearch.git)
 cd VerveSearch
 ```
+
 ### 3. Set up a Virtual Environment
 
 It's highly recommended to use a virtual environment to manage project dependencies.
@@ -121,8 +126,6 @@ reddit = asyncpraw.Reddit(
 ```
 **Note on Security:** Hardcoding credentials directly in the source code is not recommended for production environments. For deployment, you should use environment variables or a secrets management tool to keep your keys safe.
 
----
-
 ### 6. Initialize Databases
 
 * **PostgreSQL**: The application will automatically create the `feedback` table on the first run.
@@ -155,3 +158,10 @@ The first time you run the app, the Qdrant database will be empty.
 * For any result, click the **"✨ Get AI Suggestion"** button to get a summarized, actionable response.
 
 ---
+
+## 🔮 Future Improvements
+
+* **Deployment**: Containerize the application using Docker and deploy it to a service like Streamlit Community Cloud or AWS.
+* **Advanced Filtering**: Add filters for subreddits, date ranges, or post upvotes.
+* **Data Pipeline**: Create a scheduled background job (e.g., using cron or Celery) to automatically refresh the Reddit data daily.
+* **Feedback Integration**: Use the collected feedback from PostgreSQL to fine-tune the embedding model or re-rank search results.
